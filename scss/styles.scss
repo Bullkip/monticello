@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i&display=swap');
+
+@font-face {
+	font-family: 'Gotham Bold';
+	src: url('../fonts/gothambold-webfont.woff2') format('woff2'),
+		url('../fonts/gothambold-webfont.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'Gotham Book';
+	src: url('../fonts/gothambook-webfont.woff2') format('woff2'),
+		url('../fonts/gothambook-webfont.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'Gotham Medium';
+	src: url('../fonts/gothammedium-webfont.woff2') format('woff2'),
+		url('../fonts/gothammedium-webfont.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+
+}
+
+
+@import 'normalize';
+@import 'mixins';
+@import 'slick';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	height: 100%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.8rem;
+	line-height: 1.6;
+	color: #4b5562;
+	min-height: 100%;
+}
+
+.container {
+	max-width: 1170px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+.header {
+	margin-top: 55px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	color: #ffffff;
+
+	&__logo {}
+
+	&__menu {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0;
+		flex-basis: 50%;
+		text-transform: uppercase;
+	}
+
+	&__menu-item {
+		vertical-align: middle;
+	}
+
+	&__menu-link {
+		text-decoration: none;
+		color: #fff;
+		font-family: "Gotham Book", sans-serif;
+		font-size: 1.4rem;
+		@include tr (all);
+
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			border: 1px solid #fff;
+			border-radius: 50%;
+			background-color: transparent;
+			vertical-align: initial;
+			margin-right: 14px;
+			@include tr (all);
+
+		}
+
+		&:hover:before {
+			background-color: #fff;
+
+		}
+	}
+
+	&__socials {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-basis: 15%
+	}
+
+	&__socials-icon {
+		display: inline-block;
+		font-size: 1.4rem;
+		width: 40px;
+		height: 40px;
+		color: #fff;
+		vertical-align: middle;
+		text-align: center;
+		line-height: 1;
+		padding: 12px;
+		border: 1px solid #af9bfb;
+		border-radius: 50%;
+		@include tr (all);
+
+		&:hover,
+		&:focus,
+		&:active {
+			border-color: #5474fd;
+			color: #5474fd;
+		}
+	}
+}
+
+.section {
+	&-fullscreen {
+		height: 100vh;
+		text-align: center;
+	}
+
+	&-bg {
+		background-color: #5474fd;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+}
+
+section:first-child {
+	position: relative;
+	z-index: 1;
+}
+
+.header-slide {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	color: #fff;
+
+	&__title {
+		font-family: 'Gotham Bold', sans-serif;
+		font-weight: 700;
+		font-size: 8rem;
+		margin: 0 0 18px 0;
+	}
+
+	&__subtitle {
+		font-family: 'Gotham Book', sans-serif;
+		font-weight: 500;
+		font-size: 1.8rem;
+		margin: 0;
+	}
+}
+
+.slick-dots {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	right: 2%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	& li {
+		width: 10px;
+		height: 10px;
+		border: 1px solid #fff;
+		border-radius: 50%;
+		background-color: transparent;
+		margin-bottom: 40px;
+		cursor: pointer;
+		@include tr (all);
+
+		&:hover,
+		&:active {
+			background-color: #fff;
+
+		}
+
+	}
+
+	& li button {
+		display: none;
+	}
+}
+
+.scroll {
+	position: absolute;
+	left: 50%;
+	bottom: 5%;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	line-height: 1;
+	padding: 13px;
+	text-align: center;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 1.4rem;
+
+}
+
+h2 {
+	font-family: serif;
+	font-family: 'Gotham Bold', sans-serif;
+	font-size: 4.4rem;
+	position: relative;
+	text-transform: uppercase;
+	text-align: center;
+
+	&:before {
+		position: absolute;
+		content: '';
+		display: inline-block;
+		width: 100px;
+		height: 1px;
+		background-color: #4b5562;
+		@include myPos ();
+		top: -50%;
+
+	}
+}
+
+.projects {
+	padding: 140px 0 140px;
+
+	&__header {
+		margin: 0 0 170px 0;
+	}
+}
+
+.project {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	&:nth-of-type(2) {
+		flex-direction: row-reverse;
+		margin: 210px 0 0;
+	}
+}
+
+.project-picture {
+	flex-basis: 50%;
+	position: relative;
+	background-color: #2c4058;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	font-size: 0;
+	min-width: 630px;
+	height: 470px;
+
+	&--first {
+		&:before {
+			position: absolute;
+			content: '';
+			display: inline-block;
+			width: 630px;
+			height: 470px;
+			background-color: #55b7ff;
+			@include myPos ();
+			top: 35%;
+			left: 10%;
+			z-index: -1;
+		}
+	}
+
+	&--second {
+		&:before {
+			position: absolute;
+			content: '';
+			display: inline-block;
+			width: 630px;
+			height: 470px;
+			background-color: #55b7ff;
+			@include myPos ();
+			top: 35%;
+			left: 93%;
+			z-index: -1;
+		}
+	}
+
+
+}
+
+.project-profile {
+	flex-basis: 40%;
+	padding-top: 50px;
+
+	&__location {
+		font-family: 'Gotham Book', sans-serif;
+		font-size: 2.2rem;
+		text-transform: uppercase;
+	}
+
+	&__name {
+		font-family: 'Gotham Bold', sans-serif;
+		font-size: 4.4rem;
+		text-transform: uppercase;
+		margin: 0 0 20px 0;
+	}
+
+	&__description {
+		text-align: left;
+		margin: 0;
+		margin-bottom: 30px;
+	}
+
+	&__btn {
+		display: inline-block;
+		font-family: 'Gotham Book', sans-serif;
+		font-weight: 500;
+		font-size: 1.4rem;
+		line-height: 1;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #2c4058;
+		padding: 19px 40px;
+		border: 1px solid #2c4058;
+		margin-bottom: 50px;
+	}
+
+	&__map-link {
+		display: block;
+		text-decoration: none;
+		font-family: 'Open Sans Italic', sans-serif;
+		font-style: italic;
+		color: #2c4058;
+
+		& i {
+			margin-right: 10px;
+		}
+	}
+}
+
+.news {
+	background-size: contain;
+	background-position: bottom;
+	padding: 140px 0 140px;
+
+	&__title {
+		color: #fff;
+		margin-bottom: 100px;
+
+		&:before {
+			background-color: #fff;
+		}
+	}
+
+	&__item {
+		width: 370px;
+	}
+
+}
+
+.item-photo {
+	flex-basis: 45%;
+	width: 100%;
+	min-height: 240px;
+	background-color: #2c4058;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.item-description {
+	background-color: #fff;
+	text-align: left;
+	padding: 50px 30px 20px;
+	&__title{
+		margin: 0;
+		font-family: 'Gotham Bold', sans-serif;
+		font-size: 2.2rem;
+		text-transform: uppercase;
+	}
+	&_text{
+		margin: 0;
+	}
+
+	&__author {}
+}
+
+.item-description__autor-photo {}
+
+.item-description__autor-name {}
+
+.item-description__autor-date {}
